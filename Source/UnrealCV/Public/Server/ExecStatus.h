@@ -31,7 +31,7 @@ public:
 	}
 };
 
-enum FExecStatusType
+enum class FExecStatusType
 {
 	OK,
 	Error,

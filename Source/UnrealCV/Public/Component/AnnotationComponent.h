@@ -43,10 +43,10 @@ private:
 	// FParentMeshInfo ParentMeshInfo;
 	// TSharedPtr<class FParentMeshInfo> ParentMeshInfo;
 
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, Category = "unrealcv")
 	UMaterial* AnnotationMaterial;
 
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, Category = "unrealcv")
 	UMaterialInstanceDynamic* AnnotationMID;
 
 	FColor AnnotationColor;

@@ -15,6 +15,6 @@ public:
 
 private:
 	/** Post process material to extract surface normal data */
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, Category = "unrealcv")
 	UMaterial* SurfaceNormalPPMaterial;
 };

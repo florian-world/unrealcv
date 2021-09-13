@@ -16,7 +16,7 @@ class AUnrealcvWorldController : public AActor
 public:
 	FObjectAnnotator ObjectAnnotator;
 
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, Category = "unrealcv")
 	UPlayerViewMode* PlayerViewMode;
 
 	AUnrealcvWorldController(const FObjectInitializer& ObjectInitializer);

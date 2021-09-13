@@ -7,7 +7,7 @@ UDepthCamSensor::UDepthCamSensor(const FObjectInitializer& ObjectInitializer) :
 {
 	// this->CaptureSource = ESceneCaptureSource::SCS_FinalColorLDR;
 	this->CaptureSource = ESceneCaptureSource::SCS_SceneDepth;
-	bIgnoreTransparentObjects = false;
+	bIgnoreTransparentObjects = true;
 }
 
 void UDepthCamSensor::InitTextureTarget(int filmWidth, int filmHeight)

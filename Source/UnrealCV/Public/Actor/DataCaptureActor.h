@@ -159,11 +159,11 @@ protected:
 
 private:
 	// UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, Category = "unrealcv")
 	class UMeshComponent* MeshComponent;
 
 	// UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, Category = "unrealcv")
 	class UMaterialBillboardComponent* Billboard;
 
 	UClass* SearchCommonClass(UClass* Class);

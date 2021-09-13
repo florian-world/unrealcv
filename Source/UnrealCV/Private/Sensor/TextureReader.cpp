@@ -86,13 +86,22 @@ bool FastReadTexture2DAsync(FTexture2DRHIRef Texture2D, TFunction<void(FColor*, 
 		RHICmdList.UnmapStagingSurface(ReadbackTexture);
 	};
 
-	ENQUEUE_UNIQUE_RENDER_COMMAND_TWOPARAMETER(
-		FastReadBuffer,
-		TFunction<void(FRHICommandListImmediate&, FTexture2DRHIRef)>, InRenderCommand, RenderCommand,
-		FTexture2DRHIRef, InTexture2D, Texture2D,
-		{
-			InRenderCommand(RHICmdList, InTexture2D);
-		});
+	ENQUEUE_RENDER_COMMAND(FastReadBuffer)(
+	  [RenderCommand, Texture2D](FRHICommandListImmediate& RHICmdList)
+    {
+      RenderCommand(RHICmdList, Texture2D);
+    }
+	  );
+
+
+
+//	ENQUEUE_UNIQUE_RENDER_COMMAND_TWOPARAMETER(
+//		FastReadBuffer,
+//		TFunction<void(FRHICommandListImmediate&, FTexture2DRHIRef)>, InRenderCommand, RenderCommand,
+//		FTexture2DRHIRef, InTexture2D, Texture2D,
+//		{
+//			InRenderCommand(RHICmdList, InTexture2D);
+//		});
 	return true;
 }
 
